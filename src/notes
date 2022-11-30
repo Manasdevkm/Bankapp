@@ -1,0 +1,40 @@
+                    ANGULAR
+
+Basic Building Blocks
+
+1)module - to import third party  modules(root module -app.module.ts)
+2)Component - to create html,css and ts files
+
+Basic Commands
+
+1)To create new project -ng new project_name
+2)To create new Components -ng g c component_name
+3)To run angular files -ng serve --open
+
+
+Basic Concept 
+
+Data Binding
+share data between components 
+
+ts ->component
+html->view
+
+1)one way data binding 
+data sharing only one direction 
+1.1)Component to view (ts->html) or (html->ts)
+
+  a)String interpolation -{{expression}}
+  b)property binding -[attribute_name]="property"
+
+1.2)view to component(html to ts)
+
+  a)Event Binding -(event_name)="function_name()"
+  b)Event binding using $event-(event_name)="function_name($event)"
+  c)Event binding using teplate referencing variable -#variable_name
+
+  2)two way data binding
+  Data sharing in both direction (ts->html html->ts)
+
+
+

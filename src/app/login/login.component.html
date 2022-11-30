@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="login">
+
+        <div class="box">
+            <div><img src="../../assets/bank.png" alt=""></div>
+        <h1>My Bank</h1>
+        <!-- string interpolation -->
+        <h6>{{aim}}</h6>
+        <div>
+            <input #acno type="text" [placeholder]="account">
+        </div>
+        <div>
+            <input #pswd type="password" placeholder="password">
+        </div>
+        <div>
+            <button id="login" type="button" (click)="login(acno,pswd)">Log in</button></div>
+
+        <div><a href="#">Forget Password</a>Or <a href="bank-signup.html">Sign up</a></div>
+    </div>
+
+    </div>
+</div>
