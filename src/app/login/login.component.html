@@ -7,15 +7,15 @@
         <!-- string interpolation -->
         <h6>{{aim}}</h6>
         <div>
-            <input #acno type="text" [placeholder]="account">
+            <input [(ngModel)]="acno" type="text" [placeholder]="account">
         </div>
         <div>
-            <input #pswd type="password" placeholder="password">
+            <input [(ngModel)]="pswd" type="password" placeholder="password">
         </div>
         <div>
-            <button id="login" type="button" (click)="login(acno,pswd)">Log in</button></div>
+            <button id="login" type="button" (click)="login()">Log in</button></div>
 
-        <div><a href="#">Forget Password</a>Or <a href="bank-signup.html">Sign up</a></div>
+        <div><a href="#">Forget Password</a>Or <a routerLink="register">Sign up</a></div>
     </div>
 
     </div>

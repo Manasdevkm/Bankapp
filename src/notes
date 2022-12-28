@@ -36,5 +36,49 @@ data sharing only one direction
   2)two way data binding
   Data sharing in both direction (ts->html html->ts)
 
+     i)ngModel binding -import formsModule in app.module.ts
+
+     [(ngModel)]="property_name"
+
+2)Angular Routing 
+
+  To set a path for component
+
+{
+    path:value,component:component_name
+},
+
+  login
+{
+    path:'',component:LoginComponent
+},
 
 
+3)Angular services
+
+To hold redundant data  
+
+to create a new service -ng g s serevice_name
+
+
+4)Dependancy injection
+
+To share data between two dependend class 
+
+constructor(private ds:DataService)
+
+5)Angular Directive to manipulate DOM
+a)component directives(array)
+
+b)structural directives(table)
+     -> *ngFor
+
+6)Angular forms
+
+a)Template driven forms(First design the html template)
+b)Model driven forms(first design model in ts file)
+     1)Reactive forms
+     formGroup,array,control
+     for advanced validation 
+     import from Reactive Forms Module(in app.module.ts)
+     

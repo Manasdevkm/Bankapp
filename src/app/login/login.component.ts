@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-login',
@@ -16,18 +18,13 @@ account="Enter Your Account Here";
 acno='';
 pswd='';
 
-// database
-userDetails:any={
-  1000:{acno:1000,username:"Manu",password:1000,balance:1000},
-  1001:{acno:1000,username:"Arjun",password:1001,balance:1000},
-  1002:{acno:1000,username:"Maya",password:1002,balance:1000},
-}
+
 
 // functions/methods -user defined functions //(4th execute)
-  constructor() { } //(1st execute)
+  constructor(private ds:DataService,private router:Router) {  //(1st execute)
   // it automatically invokes when the object is created
   // object initialization
-
+  }
   ngOnInit(): void { //(2nd execute)
     // it is a life cycle hooks of angular
     // when the component is created at same time it will i  initialize or authorized
@@ -45,42 +42,42 @@ userDetails:any={
     
 
   }
-  // login(){
-  //   // alert('login clicked');
-  //   var acno=this.acno;
-  //   var pswd=this.pswd;
-  //   var userDetails=this.userDetails;
-
-  //   if(acno in userDetails){
-  //     if(pswd==userDetails[acno]['password']){
-  //       alert('login successful');
-
-  //     }
-  //     else{
-  //       alert('invalid password')
-  //     }
-  //   }
-  //   else{
-  //     alert('invalid userdetails')
-  //   }
-  // }
-  login(a:any,p:any){
+  login(){
     // alert('login clicked');
-    var acno=a.value;
-    var pswd=p.value;
-    var userDetails=this.userDetails;
+    var acno=this.acno;
+    var pswd=this.pswd;
+    var userDetails=this.ds.userDetails;
+    const result=this.ds.login(acno,pswd)
+    if(result){
+      alert('Login successful');
+        this.router.navigateByUrl('dashboard')
 
-    if(acno in userDetails){
-      if(pswd==userDetails[acno]['password']){
-        alert('login successful');
-
-      }
-      else{
-        alert('invalid password')
-      }
     }
     else{
-      alert('invalid userdetails')
+      alert('Login failed')
     }
+   
+
+    
   }
+//   login(a:any,p:any){
+//     // alert('login clicked');
+//     var acno=a.value;
+//     var pswd=p.value;
+//     var userDetails=this.userDetails;
+
+//     if(acno in userDetails){
+//       if(pswd==userDetails[acno]['password']){
+//         alert('login successful');
+
+//       }
+//       else{
+//         alert('invalid password')
+//       }
+//     }
+//     else{
+//       alert('invalid userdetails')
+//     }
+//   }
+// }
 }

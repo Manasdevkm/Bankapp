@@ -1,0 +1,57 @@
+<div class="parent">
+    <div>
+        <h1>Welcome {{user}}</h1>
+        <a routerLink="/transaction">Transaction History</a>
+    </div>
+    <div class="child">
+        <div class="container">
+            <div class="signup">
+                
+                <div class="box">
+                    <div><img src="images/Banks.jpg" alt=""></div>
+                <h1>Deposit</h1>
+                
+                <div>
+                    <input [(ngModel)]="acno" type="text" placeholder="Account number">
+                </div>
+                <div>
+                    <input [(ngModel)]="pswd" type="password" placeholder="password">
+                </div>
+                <div>
+                    <input [(ngModel)]="amount" type="text" placeholder="Amount">
+                </div>
+                <div>
+                    <button id="register" (click)="deposit()" type="button">Deposit</button></div>
+        
+                <!-- <div><a routerLink="">Sign in</a></div> -->
+        
+            </div>
+            </div>
+        </div>
+         
+    </div>
+    <div class="child"><div class="container">
+        <div class="signup">
+            
+            <div class="box">
+                <div><img src="images/Banks.jpg" alt=""></div>
+            <h1>Withdraw</h1>
+            
+            <div>
+                <input [(ngModel)]="acno1" type="text" placeholder="Account number">
+            </div>
+            <div>
+                <input [(ngModel)]="pswd1" type="password" placeholder="password">
+            </div>
+            <div>
+                <input [(ngModel)]="amount1" type="text" placeholder="Amount">
+            </div>
+            <div>
+                <button id="register" (click)="withdraw()" type="button">Withdraw</button></div>
+    
+            <!-- <div><a routerLink="">Sign in</a></div> -->
+    
+        </div>
+        </div>
+    </div></div>
+</div>
